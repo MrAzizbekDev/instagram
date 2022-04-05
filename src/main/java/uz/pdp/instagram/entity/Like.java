@@ -8,7 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
+@Entity(name = "likes")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,6 +22,5 @@ public class Like {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Post post;
-
-
+    boolean active=true;
 }

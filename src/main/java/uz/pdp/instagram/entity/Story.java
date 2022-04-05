@@ -21,7 +21,7 @@ public class Story {
     @CreationTimestamp
     private Timestamp createdAt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     private User user;
     
     @OneToOne

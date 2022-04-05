@@ -7,6 +7,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
+
 @Entity(name = "users")
 @Data
 @NoArgsConstructor
@@ -36,7 +38,7 @@ public class User {
     @UpdateTimestamp
     private Timestamp updatedAt;
 
-    private Timestamp birthday;
+    private Date birthday;
 
     private boolean isActive=true;
 

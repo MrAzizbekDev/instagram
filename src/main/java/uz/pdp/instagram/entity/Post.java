@@ -18,15 +18,18 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String caption;
+
     @Column(updatable = false)
     @CreationTimestamp
     private Timestamp createdAt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private User user;
 
     @OneToOne
     private Attachment attachment;
 
+    private Integer countLike=0;
 
 }

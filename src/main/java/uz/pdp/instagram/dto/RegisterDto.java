@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 
 @Data
@@ -29,6 +30,19 @@ public class RegisterDto {
 
     @NotNull
     private String prePassword;
+
+    public RegisterDto(String fullName,
+                       String phone, Integer attachmentId, String email,
+                       String password, String prePassword) {
+        this.fullName = fullName;
+        this.phone = phone;
+        this.attachmentId = attachmentId;
+        this.email = email;
+        this.password = password;
+        this.prePassword = prePassword;
+    }
+
+    private Date birthday;
 
     public RegisterDto(String email, String password) {
         this.email = email;

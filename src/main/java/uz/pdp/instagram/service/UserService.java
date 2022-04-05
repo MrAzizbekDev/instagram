@@ -21,11 +21,19 @@ public class UserService {
         User user = new User();
         user.setFullName(registerDto.getFullName());
         user.setEmail(registerDto.getEmail());
+        if (registerDto.getPassword().equals(registerDto.getPrePassword()))
+            return new ApiResponse("PrePassword and password not equals",false);
         user.setPassword(registerDto.getPassword());
+
         user.setPhone(registerDto.getPhone());
         Attachment attachment = attachmentRepository.getById(registerDto.getAttachmentId());
         user.setAttachment(attachment);
         return new ApiResponse("Saved", true);
     }
 
+
+//    public ApiResponse edit(Integer id, RegisterDto registerDto) {
+//
+//
+//    }
 }

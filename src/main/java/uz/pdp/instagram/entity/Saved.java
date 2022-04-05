@@ -16,5 +16,7 @@ public class Saved {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToMany
+    private List<User> user;
+    @ManyToMany
     private List<Post> post;
 }
